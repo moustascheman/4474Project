@@ -118,6 +118,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -198,9 +200,74 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -13.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &6190249287381529960
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3632654231654140035, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190249286093814052, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
+      propertyPath: m_Name
+      value: TankPlaceHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190249286093814053, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.8895814
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190249286093814053, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.11135053
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190249286093814053, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.4938545
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190249286093814053, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190249286093814053, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190249286093814053, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190249286093814053, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190249286093814053, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190249286093814053, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190249286093814053, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190249286093814053, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478368276090453574, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
