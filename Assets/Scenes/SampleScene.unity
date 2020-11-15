@@ -295,6 +295,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6190249285787161648, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190249285787161648, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190249285787161648, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190249285787161648, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190249285787161648, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6190249286093814052, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
       propertyPath: m_Name
       value: TankPlaceHolder
@@ -341,6 +361,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6190249286093814053, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6842274194787283474, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
+      propertyPath: m_Value
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6842274194787283474, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
+      propertyPath: m_MaxValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6842274194787283474, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
+      propertyPath: m_MinValue
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6842274194787283474, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
+      propertyPath: m_WholeNumbers
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7478368276090453574, guid: 30f84bdbc181d434da22691ac5ecc2d4, type: 3}
