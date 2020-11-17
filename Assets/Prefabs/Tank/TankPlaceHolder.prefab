@@ -23,11 +23,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694070802020491821}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.244, y: 1.247, z: -0.146}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.043581486, y: 1.3456495, z: 0.08404446}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6190249286093814053}
+  m_Father: {fileID: 6190249285787161648}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1481488962857497873
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 6103979314697986510}
   - component: {fileID: 6842274194787283474}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: ForceArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -418,6 +418,7 @@ Transform:
   m_Children:
   - {fileID: 6190249286811738785}
   - {fileID: 1413124650809872127}
+  - {fileID: 721549020058529593}
   m_Father: {fileID: 6190249286093814053}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -512,7 +513,6 @@ Transform:
   m_Children:
   - {fileID: 6190249285717569817}
   - {fileID: 6190249285787161648}
-  - {fileID: 721549020058529593}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
