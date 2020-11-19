@@ -7,9 +7,9 @@ using UnityEngine;
 public class TankController : MonoBehaviour
 {
     private string MoveInputAxis = "Horizontal";
-
-    // rotation that occurs in angles per second holding down input
-    public float rotationRate = 360;
+    public AudioClip moveClip;
+    AudioSource moveAudio;
+    public GameObject tank;
 
     // units moved per second holding down move input
     public float moveSpeed = 1;
@@ -17,7 +17,7 @@ public class TankController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        moveAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,14 +25,29 @@ public class TankController : MonoBehaviour
     {
         float moveAxis = Input.GetAxis(MoveInputAxis);
 
-        Move(moveAxis);
+        //check for user input
+        if (moveAxis != 0 ){
+            //check if the tank has fuel
+            if (tank.GetComponent<Tank>().currentFuel > 0){
+                Move(moveAxis);
+            }
+            //certain key function go here
+        }
+        else {
+            moveAudio.Stop();
+        }
 
-        //certain key function go here
     }
 
     private void Move(float input)
     {
         transform.Translate(Vector3.right * input * moveSpeed * Time.deltaTime);
+        tank.GetComponent<Tank>().decreaseFuel();
+        //play tank moving noises
+        if(!moveAudio.isPlaying){
+            moveAudio.clip = moveClip;
+            moveAudio.Play();
+        }
     }
 }
 
