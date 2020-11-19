@@ -25,18 +25,13 @@ public class TankController : MonoBehaviour
     {
         float moveAxis = Input.GetAxis(MoveInputAxis);
 
-        //check for user input
-        if (moveAxis != 0 ){
-            //check if the tank has fuel
-            if (tank.GetComponent<Tank>().currentFuel > 0){
+        //check for user input and check if the tank has fuel
+        if (moveAxis != 0 && tank.GetComponent<Tank>().currentFuel > 0){
                 Move(moveAxis);
-            }
-            //certain key function go here
         }
         else {
             moveAudio.Stop();
         }
-
     }
 
     private void Move(float input)
