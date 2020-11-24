@@ -19,6 +19,7 @@ public class MultiplayerGameManager : MonoBehaviour
     public bool Firing = false;
     public int numPlayers = 1;
 
+    private Rigidbody2D currentProjectile = null;
 
     //UI Elements
 
@@ -54,19 +55,36 @@ public class MultiplayerGameManager : MonoBehaviour
             Firing = true;
             GameObject tankObject = players[currentPlayer].gameObject;
             TankFire fireObj = tankObject.GetComponent<TankFire>();
-            fireObj.Fire();
+            currentProjectile = fireObj.Fire();
             Debug.Log("Tank " + currentPlayer + " has Fired");
+            fireGameFlowOperations();
             //Need to wait for a few seconds to make sure projectile has hit 
             //set wait time to expire time
 
             //might be better to set active in TankFire
             players[currentPlayer].isActive = false;
-
-            //Before turn ends all calculations related to health/projectiles MUST be resolved or else win state won't correctly trigger
-
-            endTurn();
-            startTurn();
         }
+    }
+
+
+    /*
+     * Used to wait until projectile has resolved before continuing to next turn
+     */
+    public void fireGameFlowOperations()
+    {
+        StartCoroutine(fireOperationRoutine());
+    }
+
+
+    public IEnumerator fireOperationRoutine()
+    {
+        yield return new WaitForSeconds(1f);
+        if(currentProjectile != null)
+        {
+            yield return new WaitUntil(() => currentProjectile == null);
+        }
+        endTurn();
+        startTurn();
     }
 
 
@@ -104,9 +122,10 @@ public class MultiplayerGameManager : MonoBehaviour
 
     public void startTurn()
     {
+        fireButton.gameObject.SetActive(true);
         fireButton.enabled = true;
         playerNumberText.text = "Player " + (currentPlayer + 1);
-        //perfornm UI setup and turn startup operations
+        //perform UI setup and turn startup operations
         players[currentPlayer].isActive = true;
     }
 
