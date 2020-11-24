@@ -7,8 +7,12 @@ using UnityEngine.UI;
 //Should be extended with inheritance for MP mode
 public class Tank : MonoBehaviour
 {
+    public bool isActive;
+    public int playerNumber;
     //Fuel Amount
     public float currentFuel = 100;
+    public float maxFuel = 100;
+    public string debugId;
     public Slider fuelSlider;
     //Projectiles should fire from this point
     public List<GameObject> Inventory;
@@ -17,7 +21,8 @@ public class Tank : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        fuelSlider.value = currentFuel;
+        //shouldn't have tanks set fuel slider since this doesn't work with multiple tanks. Better to have a manager handle this.
+       // fuelSlider.value = currentFuel;
     }
 
     //function to decrease fuel
