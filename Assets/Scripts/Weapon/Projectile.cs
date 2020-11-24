@@ -25,7 +25,7 @@ public class Projectile : MonoBehaviour
      * The projectile should typically collide with the environnment, get all targets within the blast radius  
      * and deal radius-based damage to each of them.
      */
-    void OnCollisionEnter2D(Collision2D col)
+    public virtual void OnCollisionEnter2D(Collision2D col)
     {
         Destroy(gameObject);
     }
@@ -38,7 +38,7 @@ public class Projectile : MonoBehaviour
      * damage to all other targets in the blast radius.
      * This can be overrided for weapon specific behavior
      */
-    void OnTriggerEnter2D(Collider2D col)
+    public virtual void OnTriggerEnter2D(Collider2D col)
     {
       //should check layer first to make sure it is a player layer.
         Destroy(gameObject);
