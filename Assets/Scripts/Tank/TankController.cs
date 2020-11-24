@@ -9,7 +9,6 @@ public class TankController : MonoBehaviour
     private string MoveInputAxis = "Horizontal";
     public AudioClip moveClip;
     AudioSource moveAudio;
-    public GameObject tank;
 
     // units moved per second holding down move input
     public float moveSpeed = 1;
@@ -26,7 +25,7 @@ public class TankController : MonoBehaviour
         float moveAxis = Input.GetAxis(MoveInputAxis);
 
         //check for user input and check if the tank has fuel
-        if (moveAxis != 0 && tank.GetComponent<Tank>().currentFuel > 0){
+        if (moveAxis != 0 && GetComponent<Tank>().currentFuel > 0){
                 Move(moveAxis);
         }
         else {
@@ -36,12 +35,18 @@ public class TankController : MonoBehaviour
 
     private void Move(float input)
     {
-        transform.Translate(Vector3.right * input * moveSpeed * Time.deltaTime);
-        tank.GetComponent<Tank>().decreaseFuel();
-        //play tank moving noises
-        if(!moveAudio.isPlaying){
-            moveAudio.clip = moveClip;
-            moveAudio.Play();
+        //might be better to use RB.moveposition
+        Tank tankComp = this.gameObject.GetComponent<Tank>();
+        if (tankComp.isActive)
+        {
+            transform.Translate(Vector3.right * input * moveSpeed * Time.deltaTime);
+            tankComp.decreaseFuel();
+            //play tank moving noises
+            if (!moveAudio.isPlaying)
+            {
+                moveAudio.clip = moveClip;
+                moveAudio.Play();
+            }
         }
     }
 }

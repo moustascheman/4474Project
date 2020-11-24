@@ -13,7 +13,6 @@ public class WeaponData : ScriptableObject
 
     public Sprite projectileSprite;
     public GameObject ProjectileModel;
-    public RawImage buttonIcon;
 
     public float damage;
 

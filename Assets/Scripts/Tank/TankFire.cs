@@ -11,15 +11,6 @@ public class TankFire : MonoBehaviour
 
 
 
-    // For Testing Purposes only. In actual game, UI button will call fire for the player who is in their current turn. Should probably send the call to a function in a manager (whether it's a UI or manager or the general gameManager).
-    void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            Fire();
-        }
-    }
-
     /*
      * Fires a projectile
      * Should probably be modified to take in launch force as a param
@@ -33,7 +24,6 @@ public class TankFire : MonoBehaviour
         //Velocity can be used instead, BUT that means that mass doesn't factor at all into force calculations
         //Using delta time makes it slower but you shouldn't use that since it seems like that makes projectile arcs non-deterministic (somewhat random)
         projectileInstance.AddForce(fireTransform.up*launchForce, ForceMode2D.Impulse);
-
         //TODO : Add projectile lifetime so that they're destroyed after X amount of seconds have passed if they haven't hit anything.
         //TODO : Do not let any user perform any actions (such as firing) until a fired projectile has been resolved, this could be done with the game manager since it will handle turns/gameflow
     }
