@@ -9,14 +9,17 @@ public class Tank : MonoBehaviour
 {
     public bool isActive;
     public int playerNumber;
+
     //Fuel Amount
     public float currentFuel = 100;
     public float maxFuel = 100;
-    public string debugId;
-    public Slider fuelSlider;
-    //Projectiles should fire from this point
+
+
+    public Dictionary<string, List<string>> myDict;
+
+
     public List<GameObject> Inventory;
-    public GameObject firingPoint;
+    
 
     // Update is called once per frame
     void Update()

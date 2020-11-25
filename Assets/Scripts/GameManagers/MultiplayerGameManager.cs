@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class MultiplayerGameManager : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class MultiplayerGameManager : MonoBehaviour
 
     //IMPORTANT: When you want to modify text use TMP versions rather than normal uGUI Text
     public TextMeshProUGUI playerNumberText;
+    public TextMeshProUGUI winText;
 
     public Button fireButton;
 
@@ -108,10 +110,12 @@ public class MultiplayerGameManager : MonoBehaviour
                 if (tmp==null)
                 {
                     Debug.Log("Tied");
+                    tieGame();
                 }
                 else
                 {
                     Debug.Log("won");
+                    winGame(currentPlayer);
                 }
             }
 
@@ -134,6 +138,38 @@ public class MultiplayerGameManager : MonoBehaviour
     public Tank getCurrentPlayerTank()
     {
         return players[currentPlayer];
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+    }
+
+
+    public void winGame(int playerIndex)
+    {
+        string message = "Player " + (playerIndex + 1) + " has won the game!";
+        StartCoroutine(winGameSequence(message));
+
+    }
+
+    public void tieGame()
+    {
+        string message = "TIE!";
+        StartCoroutine(winGameSequence(message));
+    }
+
+    public IEnumerator winGameSequence(string message)
+    {
+        winText.text = message;
+        yield return new WaitForSeconds(2f);
+        //load the main menu
+        //SceneManager.LoadScene()
     }
 
 
