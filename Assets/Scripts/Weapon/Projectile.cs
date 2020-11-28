@@ -16,6 +16,7 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         //Lifetime of projectiles
+        //All projectiles have a global lifetime of 5 seconds
         Destroy(gameObject, 5f);
     }
 
@@ -24,6 +25,7 @@ public class Projectile : MonoBehaviour
      * This is for environmental collisions
      * The projectile should typically collide with the environnment, get all targets within the blast radius  
      * and deal radius-based damage to each of them.
+     * The behavior for this should be weapon specific
      */
     public virtual void OnCollisionEnter2D(Collision2D col)
     {
@@ -36,7 +38,7 @@ public class Projectile : MonoBehaviour
      * As such, player/target specific operations should be performed here (i.e decrease health)
      * The hit will be a direct hit and so should deal direct damage to the target and radius-based
      * damage to all other targets in the blast radius.
-     * This can be overrided for weapon specific behavior
+     * This behavior should be weapon specific
      */
     public virtual void OnTriggerEnter2D(Collider2D col)
     {
