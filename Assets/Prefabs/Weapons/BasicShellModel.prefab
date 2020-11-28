@@ -134,4 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   base_damage: 20
-  explosion_rad: 0
+  explosion_rad: 4
+  hitboxMask:
+    serializedVersion: 2
+    m_Bits: 256
