@@ -15,7 +15,7 @@ public class BasicShell : Projectile
         foreach(Collider2D tankCol in cols)
         {
             
-            TankHealth health = tankCol.gameObject.GetComponentInParent<TankHealth>();
+            Health health = tankCol.gameObject.GetComponentInParent<Health>();
             float dam = calculateDamage(col.transform.position, tankCol.transform.position);
             health.dealDamage(dam);
             Debug.Log("Dealt " + dam + " damage");
@@ -26,7 +26,7 @@ public class BasicShell : Projectile
 
     public override void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.layer == LayerMask.NameToLayer("Hitbox"))
+        if(col.gameObject.layer == hitboxMask)
         {
             col.gameObject.GetComponentInParent<TankHealth>().dealDamage(base_damage);
         }
@@ -35,7 +35,7 @@ public class BasicShell : Projectile
         {
             if(tankCol != col)
             {
-                TankHealth health = tankCol.gameObject.GetComponentInParent<TankHealth>();
+                Health health = tankCol.gameObject.GetComponentInParent<Health>();
                 float dam = calculateDamage(col.transform.position, tankCol.transform.position);
                 health.dealDamage(dam);
                 Debug.Log("Dealt " + dam + " damage");

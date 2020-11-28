@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankHealth : MonoBehaviour
+public class TankHealth : MonoBehaviour, Health
 {
     public float MaxHealth = 100;
     public float currentHealth = 100;

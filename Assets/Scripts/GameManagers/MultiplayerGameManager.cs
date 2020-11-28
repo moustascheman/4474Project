@@ -60,10 +60,6 @@ public class MultiplayerGameManager : MonoBehaviour
             currentProjectile = fireObj.Fire();
             Debug.Log("Tank " + currentPlayer + " has Fired");
             fireGameFlowOperations();
-            //Need to wait for a few seconds to make sure projectile has hit 
-            //set wait time to expire time
-
-            //might be better to set active in TankFire
             players[currentPlayer].isActive = false;
         }
     }
