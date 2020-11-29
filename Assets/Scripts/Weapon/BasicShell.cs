@@ -26,8 +26,10 @@ public class BasicShell : Projectile
 
     public override void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.layer == hitboxMask)
+        Debug.Log(col.gameObject.name);
+        if ((hitboxMask.value & (1 << col.gameObject.layer)) > 0 )
         {
+            Debug.Log("HIT");
             col.gameObject.GetComponentInParent<TankHealth>().dealDamage(base_damage);
         }
         Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, explosion_rad, hitboxMask);
