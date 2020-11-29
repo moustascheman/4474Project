@@ -15,18 +15,16 @@ public class Tank : MonoBehaviour
     public float maxFuel = 100;
 
 
-    public Dictionary<string, List<string>> myDict;
 
 
-    public List<GameObject> Inventory;
     
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         //shouldn't have tanks set fuel slider since this doesn't work with multiple tanks. Better to have a manager handle this.
        // fuelSlider.value = currentFuel;
-    }
+    }*/
 
     //function to decrease fuel
     public void decreaseFuel(){

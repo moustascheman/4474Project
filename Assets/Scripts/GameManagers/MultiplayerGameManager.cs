@@ -165,7 +165,19 @@ public class MultiplayerGameManager : MonoBehaviour
         winText.text = message;
         yield return new WaitForSeconds(2f);
         //load the main menu
-        //SceneManager.LoadScene()
+        returnToMainMenu();
+    }
+
+    public void retryLevel()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void returnToMainMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
     }
 
 
