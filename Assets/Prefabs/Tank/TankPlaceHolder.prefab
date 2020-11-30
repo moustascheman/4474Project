@@ -687,7 +687,7 @@ GameObject:
   - component: {fileID: 597125048}
   - component: {fileID: 597125049}
   - component: {fileID: 2550217163480140028}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TankPlaceHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -899,10 +899,6 @@ MonoBehaviour:
   playerNumber: 0
   currentFuel: 100
   maxFuel: 100
-  debugId: 
-  fuelSlider: {fileID: 0}
-  Inventory: []
-  firingPoint: {fileID: 0}
 --- !u!114 &2550217163480140028
 MonoBehaviour:
   m_ObjectHideFlags: 0
