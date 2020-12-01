@@ -572,6 +572,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MultiplayerUIandManagers
       objectReference: {fileID: 0}
+    - target: {fileID: 8524040332061421887, guid: 2515602e033cb8c4cb6d9e572e9cfceb, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8524040332186693093, guid: 2515602e033cb8c4cb6d9e572e9cfceb, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

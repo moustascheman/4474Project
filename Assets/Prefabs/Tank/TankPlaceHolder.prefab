@@ -598,7 +598,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6190249285787161660}
-  m_LocalRotation: {x: -0, y: -0, z: -0.3669119, w: 0.9302558}
+  m_LocalRotation: {x: -0.040876824, y: 0.10363619, z: -0.36463246, w: 0.92446303}
   m_LocalPosition: {x: -0.20041847, y: -0.098649465, z: -0.23004436}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -608,7 +608,7 @@ Transform:
   - {fileID: 721549020058529593}
   m_Father: {fileID: 6190249286093814053}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -43.051}
+  m_LocalEulerAnglesHint: {x: 0, y: 12.793, z: -43.051}
 --- !u!33 &6190249285787161663
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -687,6 +687,7 @@ GameObject:
   - component: {fileID: 597125048}
   - component: {fileID: 597125049}
   - component: {fileID: 2550217163480140028}
+  - component: {fileID: 8919805469987947643}
   m_Layer: 10
   m_Name: TankPlaceHolder
   m_TagString: Untagged
@@ -913,6 +914,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   currentHealth: 100
+--- !u!114 &8919805469987947643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6190249286093814052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9594383600b12df479efbc7216161940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minForceValue: 0
+  maxForceValue: 0
+  minAngleValue: -110
+  maxAngleValue: 110
+  angle: 0
+  tower: {fileID: 6190249285787161648}
+  cam: {fileID: 0}
 --- !u!1 &6190249286811738784
 GameObject:
   m_ObjectHideFlags: 0
