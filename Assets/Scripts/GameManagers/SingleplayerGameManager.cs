@@ -59,6 +59,7 @@ public class SingleplayerGameManager : MonoBehaviour
             targets.Add(target);
         }
         remainingTargets = NumTargets;
+        startTurn();
     }
 
     public void startTurn()
@@ -112,6 +113,16 @@ public class SingleplayerGameManager : MonoBehaviour
         {
             startTurn();
         }
+    }
+
+    public void pauseGame()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void resumeGame()
+    {
+        Time.timeScale = 1;
     }
 
     public void WinGame()

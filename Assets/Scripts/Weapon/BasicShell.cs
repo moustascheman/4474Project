@@ -30,7 +30,7 @@ public class BasicShell : Projectile
         if ((hitboxMask.value & (1 << col.gameObject.layer)) > 0 )
         {
             Debug.Log("HIT");
-            col.gameObject.GetComponentInParent<TankHealth>().dealDamage(base_damage);
+            col.gameObject.GetComponentInParent<Health>().dealDamage(base_damage);
         }
         Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, explosion_rad, hitboxMask);
         foreach(Collider2D tankCol in cols)
