@@ -13,7 +13,7 @@ public class MultiplayerGameManager : MonoBehaviour
 
     //PlayerPref string used to get value, should be set in main menu
     string NUMPLAYERSPREF = "Pref_Multi_Num_Players";
-
+    public MultiplayerUIManager uiMan;
 
     public int currentPlayer = 0;
     public int playerLimit = 1;
