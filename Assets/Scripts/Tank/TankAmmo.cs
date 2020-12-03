@@ -55,6 +55,18 @@ public class TankAmmo : MonoBehaviour
             }
         }
     }
+    public void decrementCurrentAmmo()
+    {
+        if (currentWeaponId.Equals(Constants.largeShellId))
+        {
+            largeShellAmmo--;
+        }
+
+        else if (currentWeaponId.Equals(Constants.railgunID))
+        {
+            railgunAmmo--;
+        }
+    }
 
     
 

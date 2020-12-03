@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class SingleplayerGameManager : MonoBehaviour
 {
-
+    public SingleplayerUIManager uiMan;
 
     //Level Creator needs to initialize these variables manually
 
@@ -30,6 +30,10 @@ public class SingleplayerGameManager : MonoBehaviour
     public int noStarMinThreshold;
     public int oneStarMinThreshold;
     public int twoStarMinThreshold;
+
+
+    public int startingLargeShellCount = 0;
+    public int startingRailgunCount = 0;
 
     public int NumTurns = 0;
     private int remainingTargets;
@@ -58,7 +62,11 @@ public class SingleplayerGameManager : MonoBehaviour
             GameObject target = Instantiate(Targetprefab, TargetSpawns[i]);
             targets.Add(target);
         }
+        TankAmmo ammo = player.GetComponent<TankAmmo>();
+        ammo.largeShellAmmo = startingLargeShellCount;
+        ammo.railgunAmmo = startingRailgunCount;
         remainingTargets = NumTargets;
+        uiMan.UpdateAmmoButtons();
         startTurn();
     }
 
@@ -74,6 +82,7 @@ public class SingleplayerGameManager : MonoBehaviour
     {
         TankFire fireObject = player.gameObject.GetComponent<TankFire>();
         currentProjectile = fireObject.Fire();
+        uiMan.UpdateAmmoButtons();
         fireGameFlowOperations();
     }
 

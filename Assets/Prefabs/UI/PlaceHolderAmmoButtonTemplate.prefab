@@ -383,5 +383,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0942e5767d949be41b12b44b81684ff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quantityText: {fileID: 0}
+  quantityText: {fileID: 579750787808900173}
   buttonVisual: {fileID: 579750788722641149}

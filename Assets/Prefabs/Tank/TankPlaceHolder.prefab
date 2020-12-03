@@ -687,6 +687,7 @@ GameObject:
   - component: {fileID: 597125048}
   - component: {fileID: 597125049}
   - component: {fileID: 2550217163480140028}
+  - component: {fileID: 292773112904448610}
   m_Layer: 10
   m_Name: TankPlaceHolder
   m_TagString: Untagged
@@ -769,7 +770,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7c3a3caa7bfa93940990e349d4cc80de, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -869,6 +870,7 @@ MonoBehaviour:
   ProjectileObject: {fileID: 6958879486994924564, guid: d1aad84e09414d94486fed6dc6a1feee, type: 3}
   fireTransform: {fileID: 721549020058529593}
   launchForce: 5
+  ammo: {fileID: 292773112904448610}
 --- !u!114 &597125048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -913,6 +915,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   currentHealth: 100
+--- !u!114 &292773112904448610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6190249286093814052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e565db3bf1f10543a1737375fc67249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  largeShellAmmo: 0
+  largeShellLimit: 5
+  railgunAmmo: 0
+  railgunLimit: 5
+  basicShellPrefab: {fileID: 3964530882291391980, guid: d1aad84e09414d94486fed6dc6a1feee, type: 3}
+  largeShellPrefab: {fileID: 1220006686618995123, guid: 69e780453afbc5d4886a77ad9611996a, type: 3}
+  railgunPrefab: {fileID: 1311780968067389412, guid: eeec0a241874e8c43aa215b4e733bcff, type: 3}
+  currentWeaponId: BASICSHELL_WEP
 --- !u!1 &6190249286811738784
 GameObject:
   m_ObjectHideFlags: 0
