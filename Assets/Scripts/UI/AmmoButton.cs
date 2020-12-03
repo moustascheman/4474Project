@@ -13,20 +13,17 @@ public class AmmoButton : MonoBehaviour
 
     public void updateQuantity(int num)
     {
-        if (num == -1)
+        if(num > 0)
         {
-            quantityText.text = "";
+            buttonVisual.interactable = true;
         }
         else
         {
-            if (num <= 0)
-            {
-                deselectButton();
-                buttonVisual.interactable = false;
-            }
-            string text = "x" + num.ToString();
-            quantityText.text = text;
+            deselectButton();
+            buttonVisual.interactable = false;
         }
+        quantityText.text = "x" + num.ToString();
+
     }
 
     /*

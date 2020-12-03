@@ -59,6 +59,7 @@ public class MultiplayerGameManager : MonoBehaviour
             TankFire fireObj = tankObject.GetComponent<TankFire>();
             currentProjectile = fireObj.Fire();
             Debug.Log("Tank " + currentPlayer + " has Fired");
+            uiMan.UpdateAmmoButtons();
             fireGameFlowOperations();
             players[currentPlayer].isActive = false;
         }
@@ -122,6 +123,7 @@ public class MultiplayerGameManager : MonoBehaviour
 
     public void startTurn()
     {
+        uiMan.UpdateAmmoButtons();
         fireButton.gameObject.SetActive(true);
         fireButton.enabled = true;
         playerNumberText.text = "Player " + (currentPlayer + 1);

@@ -8,6 +8,7 @@ public class TankFire : MonoBehaviour
     public Rigidbody2D ProjectileObject;
     public Transform fireTransform;
     public float launchForce;
+    public TankAmmo ammo;
 
 
 
@@ -18,6 +19,8 @@ public class TankFire : MonoBehaviour
 
     public Rigidbody2D Fire()
     {
+        ProjectileObject = ammo.getCurrentProjectile().GetComponent<Rigidbody2D>();
+        ammo.decrementCurrentAmmo();
         Rigidbody2D projectileInstance = Instantiate(ProjectileObject, fireTransform.position, fireTransform.rotation) as Rigidbody2D;
 
         //Velocity can be used instead, BUT that means that mass doesn't factor at all into force calculations
