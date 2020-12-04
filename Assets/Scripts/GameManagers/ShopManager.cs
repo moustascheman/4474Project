@@ -18,25 +18,29 @@ public class ShopManager : MonoBehaviour
     {
         Tank player = gm.getCurrentPlayerTank();
         TankAmmo ammo = player.GetComponent<TankAmmo>();
+        TankMoney money = player.GetComponent<TankMoney>();
         ammo.largeShellAmmo++;
-        player.money -= largeShellPrice;
+        money.currentMoney -= largeShellPrice;
     }
 
     public void buyRailgun()
     {
         Tank player = gm.getCurrentPlayerTank();
+        TankMoney money = player.GetComponent<TankMoney>();
         TankAmmo ammo = player.GetComponent<TankAmmo>();
         ammo.railgunAmmo++;
-        player.money -= railGunPrice;
+        money.currentMoney -= railGunPrice;
     }
 
     public void updateShopScreen()
     {
         Tank player = gm.getCurrentPlayerTank();
-        currentMoneyText.text = "Current Money: " + player.money.ToString();
+        TankMoney money = player.GetComponent<TankMoney>();
+        int currentFunds = money.currentMoney;
+        currentMoneyText.text = "Current Money: " + currentFunds.ToString();
         largeShellEntry.setPrice(largeShellPrice);
         railgunEntry.setPrice(railGunPrice);
-        if(player.money < largeShellPrice)
+        if(currentFunds < largeShellPrice)
         {
             largeShellEntry.disableEntry();
         }
@@ -44,7 +48,7 @@ public class ShopManager : MonoBehaviour
         {
             largeShellEntry.enableEntry();
         }
-        if(player.money < railGunPrice)
+        if(currentFunds < railGunPrice)
         {
             railgunEntry.disableEntry();
         }
