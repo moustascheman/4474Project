@@ -12,6 +12,8 @@ public class Tank : MonoBehaviour
     public int playerNumber;
     public TextMeshProUGUI playerNumberUI;
 
+    public int money = 0;
+
     //Fuel Amount
     public float currentFuel = 100;
     public float maxFuel = 100;
