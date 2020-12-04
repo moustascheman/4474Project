@@ -9,18 +9,17 @@ public class TankHealth : MonoBehaviour, Health
     public float currentHealth = 100;
     public Slider miniHealthSlider;
 
-    void Update(){
-        miniHealthSlider.value = currentHealth;
-    }
-
     public void dealDamage(float dam)
     {
         currentHealth -= dam;
+         miniHealthSlider.value = currentHealth;
         if(currentHealth <= 0)
         {
             killTank();
         }
-        StartCoroutine(UpdateMiniHealthSlider());
+        else {
+            StartCoroutine(UpdateMiniHealthSlider());
+        }
     }
 
     public void killTank()

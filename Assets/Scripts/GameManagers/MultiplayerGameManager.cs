@@ -45,6 +45,7 @@ public class MultiplayerGameManager : MonoBehaviour
             playerTankComponent.playerNumber = i+1;
             players.Add(playerTankComponent);
             playerTankComponent.isActive = false;
+            playerTankComponent.setPlayerNumber();
         }
         startTurn();
 
