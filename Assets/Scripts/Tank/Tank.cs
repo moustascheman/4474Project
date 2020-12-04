@@ -9,6 +9,7 @@ public class Tank : MonoBehaviour
 {
     public bool isActive;
     public int playerNumber;
+    public Text playerNumberUI;
 
     //Fuel Amount
     public float currentFuel = 100;
@@ -17,14 +18,13 @@ public class Tank : MonoBehaviour
 
 
 
-    
+
 
     // Update is called once per frame
-    /*void Update()
+    void Update()
     {
-        //shouldn't have tanks set fuel slider since this doesn't work with multiple tanks. Better to have a manager handle this.
-       // fuelSlider.value = currentFuel;
-    }*/
+        playerNumberUI.text = playerNumber.ToString();
+    }
 
     //function to decrease fuel
     public void decreaseFuel(){
