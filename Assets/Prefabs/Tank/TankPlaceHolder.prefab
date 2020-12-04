@@ -1033,6 +1033,7 @@ GameObject:
   - component: {fileID: 597125049}
   - component: {fileID: 2550217163480140028}
   - component: {fileID: 292773112904448610}
+  - component: {fileID: 3473288570965215562}
   m_Layer: 10
   m_Name: TankPlaceHolder
   m_TagString: Untagged
@@ -1246,7 +1247,6 @@ MonoBehaviour:
   isActive: 0
   playerNumber: 0
   playerNumberUI: {fileID: 126291808190320061}
-  money: 0
   currentFuel: 100
   maxFuel: 100
 --- !u!114 &2550217163480140028
@@ -1264,6 +1264,7 @@ MonoBehaviour:
   MaxHealth: 100
   currentHealth: 100
   miniHealthSlider: {fileID: 4951003088891825445}
+  money: {fileID: 3473288570965215562}
 --- !u!114 &292773112904448610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1284,6 +1285,20 @@ MonoBehaviour:
   largeShellPrefab: {fileID: 1220006686618995123, guid: 69e780453afbc5d4886a77ad9611996a, type: 3}
   railgunPrefab: {fileID: 1311780968067389412, guid: eeec0a241874e8c43aa215b4e733bcff, type: 3}
   currentWeaponId: BASICSHELL_WEP
+--- !u!114 &3473288570965215562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6190249286093814052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2dfd98fb6505df4c8178e2c496fb624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 0}
+  currentMoney: 0
 --- !u!1 &6190249286811738784
 GameObject:
   m_ObjectHideFlags: 0

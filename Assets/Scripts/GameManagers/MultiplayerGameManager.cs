@@ -19,6 +19,8 @@ public class MultiplayerGameManager : MonoBehaviour
     public int playerLimit = 1;
     public bool Firing = false;
     public int numPlayers = 1;
+    public int damagedMoneyAmount = 50;
+    public int killedMoneyAmount = 100;
 
     private Rigidbody2D currentProjectile = null;
 
@@ -46,6 +48,8 @@ public class MultiplayerGameManager : MonoBehaviour
             players.Add(playerTankComponent);
             playerTankComponent.isActive = false;
             playerTankComponent.setPlayerNumber();
+            TankMoney money = playerTank.GetComponent<TankMoney>();
+            money.gm = this;
         }
         startTurn();
 
@@ -83,6 +87,7 @@ public class MultiplayerGameManager : MonoBehaviour
         {
             yield return new WaitUntil(() => currentProjectile == null);
         }
+        yield return new WaitForSeconds(1f);
         endTurn();
         startTurn();
     }
@@ -155,6 +160,18 @@ public class MultiplayerGameManager : MonoBehaviour
         string message = "Player " + (playerIndex + 1) + " has won the game!";
         StartCoroutine(winGameSequence(message));
 
+    }
+
+    public void playerDamaged()
+    {
+        TankMoney money = getCurrentPlayerTank().gameObject.GetComponent<TankMoney>();
+        money.currentMoney += damagedMoneyAmount;
+    }
+
+    public void playerKilled()
+    {
+        TankMoney money = getCurrentPlayerTank().gameObject.GetComponent<TankMoney>();
+        money.currentMoney += killedMoneyAmount;
     }
 
     public void tieGame()
