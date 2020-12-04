@@ -10,6 +10,7 @@ public class MultiplayerUIManager : MonoBehaviour
 
     public MultiplayerGameManager man;
     public Slider fuelSlider;
+    public Slider healthSlider;
 
     public AmmoButton basicShellButton;
     public AmmoButton largeShellButton;
@@ -19,6 +20,7 @@ public class MultiplayerUIManager : MonoBehaviour
     void Update()
     {
         updateFuelSlider();
+        updateHealthSlider();
     }
 
 
@@ -27,6 +29,10 @@ public class MultiplayerUIManager : MonoBehaviour
         fuelSlider.value = man.getCurrentPlayerTank().currentFuel;
     }
 
+    private void updateHealthSlider()
+    {
+        healthSlider.value = man.getCurrentPlayerTank().GetComponent<TankHealth>().currentHealth;
+    }
 
     public void changeAmmoType(string typeId)
     {
