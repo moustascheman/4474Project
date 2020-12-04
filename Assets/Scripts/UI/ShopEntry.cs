@@ -14,6 +14,7 @@ public class ShopEntry : MonoBehaviour
 {
     public Button buyButton;
     public TextMeshProUGUI fundsMessage;
+    public TextMeshProUGUI priceMessage;
 
     public void disableEntry()
     {
@@ -25,6 +26,11 @@ public class ShopEntry : MonoBehaviour
     {
         buyButton.interactable = true;
         fundsMessage.text = "";
+    }
+
+    public void setPrice(int i)
+    {
+        priceMessage.text = "Price: " + i.ToString();
     }
 
 

@@ -10,6 +10,8 @@ public class Tank : MonoBehaviour
     public bool isActive;
     public int playerNumber;
 
+    public int money = 0;
+
     //Fuel Amount
     public float currentFuel = 100;
     public float maxFuel = 100;
