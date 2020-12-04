@@ -11,12 +11,12 @@ public class BasicShell : Projectile
 
     public override void OnCollisionEnter2D(Collision2D col)
     {
-        Collider2D[] cols = Physics2D.OverlapCircleAll(col.transform.position, explosion_rad, hitboxMask);
+        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, explosion_rad, hitboxMask);
         foreach(Collider2D tankCol in cols)
         {
             
             Health health = tankCol.gameObject.GetComponentInParent<Health>();
-            float dam = calculateDamageFromClosestPoint(tankCol, col.transform.position);
+            float dam = calculateDamageFromClosestPoint(tankCol, transform.position);
             health.dealDamage(dam);
             Debug.Log("Dealt " + dam + " damage");
 
