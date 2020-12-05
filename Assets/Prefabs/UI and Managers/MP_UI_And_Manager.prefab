@@ -3384,7 +3384,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 6935871164349314554}
         m_TargetAssemblyTypeName: MultiplayerGameManager, Assembly-CSharp
