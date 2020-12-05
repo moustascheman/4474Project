@@ -8,6 +8,7 @@ public class AmmoButton : MonoBehaviour
 {
     public TextMeshProUGUI quantityText;
     public Button buttonVisual;
+    public GameObject glowLayer;
 
 
 
@@ -37,11 +38,11 @@ public class AmmoButton : MonoBehaviour
 
     public void selectButton()
     {
-        
+        glowLayer.SetActive(true);
     }
 
     public void deselectButton()
     {
-
+        glowLayer.SetActive(false);
     }
 }
