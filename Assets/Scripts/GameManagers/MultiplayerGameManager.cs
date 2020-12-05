@@ -46,7 +46,7 @@ public class MultiplayerGameManager : MonoBehaviour
             Tank playerTankComponent = playerTank.GetComponent<Tank>();
             playerTankComponent.playerNumber = i+1;
             players.Add(playerTankComponent);
-            playerTankComponent.isActive = false;
+            playerTankComponent.SetActive(false);
             playerTankComponent.setPlayerNumber();
             TankMoney money = playerTank.GetComponent<TankMoney>();
             money.gm = this;
@@ -66,7 +66,7 @@ public class MultiplayerGameManager : MonoBehaviour
             Debug.Log("Tank " + currentPlayer + " has Fired");
             uiMan.UpdateAmmoButtons();
             fireGameFlowOperations();
-            players[currentPlayer].isActive = false;
+            players[currentPlayer].SetActive(false);
         }
     }
 
@@ -134,7 +134,7 @@ public class MultiplayerGameManager : MonoBehaviour
         fireButton.enabled = true;
         playerNumberText.text = "Player " + (currentPlayer + 1);
         //perform UI setup and turn startup operations
-        players[currentPlayer].isActive = true;
+        players[currentPlayer].SetActive(true);
     }
 
 

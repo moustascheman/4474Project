@@ -534,8 +534,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c0d721231d86c24fb8c63398a59efcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   playerNumber: 0
+  playerNumberUI: {fileID: 0}
+  aimingArrow: {fileID: 8005723569499789643}
   currentFuel: 100
   maxFuel: 100
 --- !u!114 &5066781617460951718
@@ -697,8 +698,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8005723569499789640}
   - component: {fileID: 8005723569499789638}
-  - component: {fileID: 8005723569499789641}
   - component: {fileID: 8005723569499789639}
+  - component: {fileID: 861269268998277777}
   m_Layer: 5
   m_Name: AimingArrow
   m_TagString: Untagged
@@ -771,32 +772,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8005723569499789641
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8005723569499789643}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.15615916}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.4, y: 8.59}
-    newSize: {x: 8.4, y: 8.59}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 8.4, y: 4.113359}
-  m_EdgeRadius: 0
 --- !u!114 &8005723569499789639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -809,13 +784,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca725edac4657144bb7726a3c6056adb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPosition: {x: 0, y: 0, z: 0}
-  mouseOffset: {x: 0, y: 0, z: 0}
-  distanceToCamera: 0
-  pivot: {fileID: 4247498932401846098}
   maxAngleConstraint: 110
   minAngleConstraint: -110
-  rotDistance: 0
+--- !u!65 &861269268998277777
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8005723569499789643}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.4000025, y: 8.590002, z: 0.2}
+  m_Center: {x: -0.0000019073486, y: -0.000000059604645, z: 0}
 --- !u!1 &8527089374864952241
 GameObject:
   m_ObjectHideFlags: 0
