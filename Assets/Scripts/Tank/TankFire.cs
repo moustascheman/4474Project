@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TankFire : MonoBehaviour
 {
-
+    public AudioSource firedAudioSource;
     public Rigidbody2D ProjectileObject;
     public Transform fireTransform;
     public float launchForce;
@@ -17,8 +17,10 @@ public class TankFire : MonoBehaviour
      * Should probably be modified to take in launch force as a param
      */
 
-    public Rigidbody2D Fire()
-    {
+    public Rigidbody2D Fire() {
+        // Play audio
+        firedAudioSource.GetComponent<AudioSource>().Play();
+        
         ProjectileObject = ammo.getCurrentProjectile().GetComponent<Rigidbody2D>();
         ammo.decrementCurrentAmmo();
         Rigidbody2D projectileInstance = Instantiate(ProjectileObject, fireTransform.position, fireTransform.rotation) as Rigidbody2D;
