@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f9a23f31a1d8d48b0659696e41c777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionEffect: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
   base_damage: 40
   explosion_rad: 5
   hitboxMask:
