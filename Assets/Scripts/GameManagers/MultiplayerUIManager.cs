@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class MultiplayerUIManager : MonoBehaviour
 {
@@ -13,23 +14,28 @@ public class MultiplayerUIManager : MonoBehaviour
     public Slider healthSlider;
 
     public Slider forceSlider;
+    public TextMeshProUGUI textPower;
 
     public AmmoButton basicShellButton;
     public AmmoButton largeShellButton;
     public AmmoButton railgunButton;
 
+    private const float MAX_POWER = 20;
+    private const float MIN_POWER = 5;
     // Update is called once per frame
     void Update()
     {
         updateFuelSlider();
         updateHealthSlider();
+        textPower.text = (int) Mathf.Ceil((forceSlider.value - MIN_POWER) * (100 / (MAX_POWER - MIN_POWER)))+ "%";
     }
 
 
     public void updateForceSlider()
     {
         TankFire fireObj = man.getCurrentPlayerTank().GetComponent<TankFire>();
-        forceSlider.value = fireObj.launchForce; 
+        forceSlider.value = fireObj.launchForce;
+        textPower.text = (int) Mathf.Ceil((forceSlider.value - MIN_POWER) * (100 / (MAX_POWER - MIN_POWER)))+ "%";
     }
 
 
