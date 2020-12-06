@@ -8,9 +8,9 @@ public class ArrowDrag : MonoBehaviour {
         // Get angle
         Vector3 tankWorldPosition = Camera.main.WorldToScreenPoint(transform.parent.position);
         tankWorldPosition = Input.mousePosition - tankWorldPosition;
-        float fAngle = Mathf.Atan2(tankWorldPosition.y, tankWorldPosition.x) * Mathf.Rad2Deg;
+        float fAngle = Mathf.Atan2(tankWorldPosition.y, tankWorldPosition.x) * Mathf.Rad2Deg - 90;
 
         // Update rotation
-        transform.parent.rotation = Quaternion.Euler(0, 0, fAngle - 90);
+        transform.parent.rotation = Quaternion.Euler(0, 0, Mathf.Clamp(fAngle, minAngleConstraint, maxAngleConstraint));
     }
 }
