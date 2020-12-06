@@ -8,10 +8,10 @@ using TMPro;
 //Should be extended with inheritance for MP mode
 public class Tank : MonoBehaviour
 {
-    public bool isActive;
+    private bool isActive;
     public int playerNumber;
     public TextMeshProUGUI playerNumberUI;
-
+    public GameObject aimingArrow;
 
     //Fuel Amount
     public float currentFuel = 100;
@@ -24,5 +24,19 @@ public class Tank : MonoBehaviour
 
     public void setPlayerNumber(){
         playerNumberUI.text = playerNumber.ToString();
+    }
+
+    public void SetActive(bool isActive) {
+        this.isActive = isActive;
+
+        if (isActive) {
+            aimingArrow.SetActive(true);
+        } else {
+            aimingArrow.SetActive(false);
+        }
+    }
+
+    public bool IsActive() {
+        return isActive;
     }
 }

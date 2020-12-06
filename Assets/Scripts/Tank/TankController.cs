@@ -26,7 +26,7 @@ public class TankController : MonoBehaviour
 
         //check for user input and check if the tank has fuel
         if (moveAxis != 0 && GetComponent<Tank>().currentFuel > 0){
-                Move(moveAxis);
+            Move(moveAxis);
         }
         else {
             moveAudio.Stop();
@@ -37,7 +37,7 @@ public class TankController : MonoBehaviour
     {
         //might be better to use RB.moveposition
         Tank tankComp = this.gameObject.GetComponent<Tank>();
-        if (tankComp.isActive)
+        if (tankComp.IsActive())
         {
             transform.Translate(Vector3.right * input * moveSpeed * Time.deltaTime);
             tankComp.decreaseFuel();
