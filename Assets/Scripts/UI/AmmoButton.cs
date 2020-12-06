@@ -31,18 +31,18 @@ public class AmmoButton : MonoBehaviour
      * There's a few different approaches we can take to selection in the final UI
      * My suggestion is to add a "border" image game object to each ammo button
      * which we enable/disable on each select/deselect
-     * 
-     * You need to manually set the onclickEvents for the ammo buttons so that they 
+     *
+     * You need to manually set the onclickEvents for the ammo buttons so that they
      * call deselectButton() on the other buttons
      */
 
     public void selectButton()
     {
-        glowLayer.SetActive(true);
+        //glowLayer.SetActive(true);
     }
 
     public void deselectButton()
     {
-        glowLayer.SetActive(false);
+        //glowLayer.SetActive(false);
     }
 }
