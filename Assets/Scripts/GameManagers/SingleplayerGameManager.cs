@@ -81,6 +81,8 @@ public class SingleplayerGameManager : MonoBehaviour
     public void Fire()
     {
         TankFire fireObject = player.gameObject.GetComponent<TankFire>();
+        float force = uiMan.forceSlider.value;
+        fireObject.launchForce = force;
         currentProjectile = fireObject.Fire();
         uiMan.UpdateAmmoButtons();
         fireGameFlowOperations();
