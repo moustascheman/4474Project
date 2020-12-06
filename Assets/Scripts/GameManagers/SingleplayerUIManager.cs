@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SingleplayerUIManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class SingleplayerUIManager : MonoBehaviour
     public AmmoButton basicShellButton;
     public AmmoButton largeShellButton;
     public AmmoButton railgunButton;
+    public Slider forceSlider;
     public void changeAmmoType(string typeId)
     {
         TankAmmo ammo = man.player.gameObject.GetComponent<TankAmmo>();

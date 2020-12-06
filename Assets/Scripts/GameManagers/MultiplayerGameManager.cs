@@ -62,6 +62,8 @@ public class MultiplayerGameManager : MonoBehaviour
             Firing = true;
             GameObject tankObject = players[currentPlayer].gameObject;
             TankFire fireObj = tankObject.GetComponent<TankFire>();
+            float forceVal = uiMan.forceSlider.value;
+            fireObj.launchForce = forceVal;
             currentProjectile = fireObj.Fire();
             Debug.Log("Tank " + currentPlayer + " has Fired");
             uiMan.UpdateAmmoButtons();
@@ -130,6 +132,7 @@ public class MultiplayerGameManager : MonoBehaviour
     public void startTurn()
     {
         uiMan.UpdateAmmoButtons();
+        uiMan.updateForceSlider();
         fireButton.gameObject.SetActive(true);
         fireButton.enabled = true;
         playerNumberText.text = "Player " + (currentPlayer + 1);

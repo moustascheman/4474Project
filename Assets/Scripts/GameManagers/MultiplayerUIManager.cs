@@ -12,6 +12,8 @@ public class MultiplayerUIManager : MonoBehaviour
     public Slider fuelSlider;
     public Slider healthSlider;
 
+    public Slider forceSlider;
+
     public AmmoButton basicShellButton;
     public AmmoButton largeShellButton;
     public AmmoButton railgunButton;
@@ -21,6 +23,13 @@ public class MultiplayerUIManager : MonoBehaviour
     {
         updateFuelSlider();
         updateHealthSlider();
+    }
+
+
+    public void updateForceSlider()
+    {
+        TankFire fireObj = man.getCurrentPlayerTank().GetComponent<TankFire>();
+        forceSlider.value = fireObj.launchForce; 
     }
 
 
