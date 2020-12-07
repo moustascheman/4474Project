@@ -10,6 +10,8 @@ public class TankHealth : MonoBehaviour, Health
     public Slider miniHealthSlider;
     public TankMoney money;
 
+    public GameObject destroyed;
+
     public void dealDamage(float dam)
     {
         currentHealth -= dam;
@@ -19,7 +21,7 @@ public class TankHealth : MonoBehaviour, Health
             money.onPlayerKilled();
             killTank();
         }
-        else 
+        else
         {
             money.onPlayerDamaged();
             StartCoroutine(UpdateMiniHealthSlider());
@@ -29,6 +31,8 @@ public class TankHealth : MonoBehaviour, Health
     public void killTank()
     {
         //play death anim/particle effects first
+        destroyed.GetComponent<TMPro.TextMeshProUGUI>().text= "Player " + gameObject.GetComponent<Tank>().playerNumber + " has been destroyed";
+        destroyed.SetActive(true);
         Destroy(gameObject);
     }
 

@@ -1451,6 +1451,7 @@ MonoBehaviour:
   currentHealth: 100
   miniHealthSlider: {fileID: 6981413038757803316}
   money: {fileID: 3473288570965215562}
+  destroyed: {fileID: 0}
 --- !u!114 &292773112904448610
 MonoBehaviour:
   m_ObjectHideFlags: 0
