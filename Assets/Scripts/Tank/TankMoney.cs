@@ -9,7 +9,7 @@ public class TankMoney : MonoBehaviour
 
 
     public int currentMoney = 0;
-    
+
     public void onPlayerDamaged()
     {
         if(gm.getCurrentPlayerTank().gameObject != gameObject)
@@ -25,5 +25,4 @@ public class TankMoney : MonoBehaviour
             gm.playerKilled();
         }
     }
-
 }

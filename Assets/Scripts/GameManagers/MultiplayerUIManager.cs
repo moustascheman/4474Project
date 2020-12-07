@@ -20,6 +20,9 @@ public class MultiplayerUIManager : MonoBehaviour
     public AmmoButton largeShellButton;
     public AmmoButton railgunButton;
 
+    public GameObject destroyedText;
+
+    public GameObject playerWinUI;
     public TextMeshProUGUI winText;
 
     private const float MAX_POWER = 20;
@@ -43,12 +46,14 @@ public class MultiplayerUIManager : MonoBehaviour
 
     private void updateFuelSlider()
     {
-        fuelSlider.value = man.getCurrentPlayerTank().currentFuel;
+            fuelSlider.value = man.getCurrentPlayerTank().currentFuel;
     }
 
     private void updateHealthSlider()
     {
-        healthSlider.value = man.getCurrentPlayerTank().GetComponent<TankHealth>().currentHealth;
+        if (man.getCurrentPlayerTank() != null) {
+            healthSlider.value = man.getCurrentPlayerTank().GetComponent<TankHealth>().currentHealth;
+        }
     }
 
     public void changeAmmoType(string typeId)

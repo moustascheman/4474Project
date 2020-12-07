@@ -24,8 +24,6 @@ public class MultiplayerGameManager : MonoBehaviour
 
     private Rigidbody2D currentProjectile = null;
 
-    public GameObject playerWinUI;
-
     //UI Elements
 
     //IMPORTANT: When you want to modify text use TMP versions rather than normal uGUI Text
@@ -52,6 +50,8 @@ public class MultiplayerGameManager : MonoBehaviour
             playerTankComponent.setPlayerNumber();
             TankMoney money = playerTank.GetComponent<TankMoney>();
             money.gm = this;
+            TankHealth deadText = playerTank.GetComponent<TankHealth>();
+            deadText.destroyed = uiMan.destroyedText;
         }
         startTurn();
 
@@ -163,7 +163,7 @@ public class MultiplayerGameManager : MonoBehaviour
     public void winGame(int playerIndex)
     {
         uiMan.winText.text = "Player " + (playerIndex + 1) + " is the winner";
-        playerWinUI.SetActive(true);
+        uiMan.playerWinUI.SetActive(true);
 
     }
 
@@ -182,7 +182,7 @@ public class MultiplayerGameManager : MonoBehaviour
     public void tieGame()
     {
         uiMan.winText.text = "TIE";
-        playerWinUI.SetActive(true);
+        uiMan.playerWinUI.SetActive(true);
     }
 
     public void retryLevel()
@@ -202,5 +202,4 @@ public class MultiplayerGameManager : MonoBehaviour
     {
         return currentPlayer;
     }
-
 }
