@@ -38,11 +38,11 @@ public class AmmoButton : MonoBehaviour
 
     public void selectButton()
     {
-        //glowLayer.SetActive(true);
+        glowLayer.SetActive(true);
     }
 
     public void deselectButton()
     {
-        //glowLayer.SetActive(false);
+        glowLayer.SetActive(false);
     }
 }
