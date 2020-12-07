@@ -24,11 +24,13 @@ public class MultiplayerGameManager : MonoBehaviour
 
     private Rigidbody2D currentProjectile = null;
 
+    public GameObject playerWinUI;
+
     //UI Elements
 
     //IMPORTANT: When you want to modify text use TMP versions rather than normal uGUI Text
     public TextMeshProUGUI playerNumberText;
-    public TextMeshProUGUI winText;
+    //public TextMeshProUGUI winText;
 
     public Button fireButton;
 
@@ -160,8 +162,8 @@ public class MultiplayerGameManager : MonoBehaviour
 
     public void winGame(int playerIndex)
     {
-        string message = "Player " + (playerIndex + 1) + " has won the game!";
-        StartCoroutine(winGameSequence(message));
+        uiMan.winText.text = "Player " + (playerIndex + 1) + " is the winner";
+        playerWinUI.SetActive(true);
 
     }
 
@@ -179,16 +181,8 @@ public class MultiplayerGameManager : MonoBehaviour
 
     public void tieGame()
     {
-        string message = "TIE!";
-        StartCoroutine(winGameSequence(message));
-    }
-
-    public IEnumerator winGameSequence(string message)
-    {
-        winText.text = message;
-        yield return new WaitForSeconds(2f);
-        //load the main menu
-        returnToMainMenu();
+        uiMan.winText.text = "TIE";
+        playerWinUI.SetActive(true);
     }
 
     public void retryLevel()

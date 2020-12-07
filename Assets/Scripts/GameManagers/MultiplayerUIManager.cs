@@ -14,11 +14,13 @@ public class MultiplayerUIManager : MonoBehaviour
     public Slider healthSlider;
 
     public Slider forceSlider;
-    public TextMeshProUGUI textPower;
+    public TextMeshProUGUI powerPercentText;
 
     public AmmoButton basicShellButton;
     public AmmoButton largeShellButton;
     public AmmoButton railgunButton;
+
+    public TextMeshProUGUI winText;
 
     private const float MAX_POWER = 20;
     private const float MIN_POWER = 5;
@@ -27,7 +29,7 @@ public class MultiplayerUIManager : MonoBehaviour
     {
         updateFuelSlider();
         updateHealthSlider();
-        textPower.text = (int) Mathf.Ceil((forceSlider.value - MIN_POWER) * (100 / (MAX_POWER - MIN_POWER)))+ "%";
+        powerPercentText.text = (int) Mathf.Ceil((forceSlider.value - MIN_POWER) * (100 / (MAX_POWER - MIN_POWER)))+ "%";
     }
 
 
@@ -35,7 +37,7 @@ public class MultiplayerUIManager : MonoBehaviour
     {
         TankFire fireObj = man.getCurrentPlayerTank().GetComponent<TankFire>();
         forceSlider.value = fireObj.launchForce;
-        textPower.text = (int) Mathf.Ceil((forceSlider.value - MIN_POWER) * (100 / (MAX_POWER - MIN_POWER)))+ "%";
+        powerPercentText.text = (int) Mathf.Ceil((forceSlider.value - MIN_POWER) * (100 / (MAX_POWER - MIN_POWER)))+ "%";
     }
 
 
