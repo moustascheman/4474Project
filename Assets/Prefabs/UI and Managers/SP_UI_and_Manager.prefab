@@ -1119,7 +1119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiMan: {fileID: 3578478586963235045}
   PlayerPrefab: {fileID: 282507636529389070, guid: 36cf1233fbdd27549a118fd876482504, type: 3}
-  Targetprefab: {fileID: 7379477970684853079, guid: bbf52b748144ffd43a696452eaff466d, type: 3}
+  Targetprefab: {fileID: 95539620949238152, guid: 1f7e31c1c7b734d4f824534080a8c877, type: 3}
   playerSpawn: {fileID: 0}
   TargetSpawns:
   - {fileID: 0}
