@@ -4380,6 +4380,14 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 9189658377734462743, guid: 7b0060778a31cf849b32282f20ad78c2, type: 3}
+      propertyPath: levelId
+      value: SP_UITestScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189658377734462743, guid: 7b0060778a31cf849b32282f20ad78c2, type: 3}
+      propertyPath: sceneName
+      value: SP_UITestScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b0060778a31cf849b32282f20ad78c2, type: 3}
 --- !u!1 &1740645078
