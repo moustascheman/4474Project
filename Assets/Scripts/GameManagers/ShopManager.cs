@@ -37,7 +37,7 @@ public class ShopManager : MonoBehaviour
         Tank player = gm.getCurrentPlayerTank();
         TankMoney money = player.GetComponent<TankMoney>();
         int currentFunds = money.currentMoney;
-        currentMoneyText.text = "Current Money: " + currentFunds.ToString();
+        currentMoneyText.text = currentFunds.ToString();
         largeShellEntry.setPrice(largeShellPrice);
         railgunEntry.setPrice(railGunPrice);
         if(currentFunds < largeShellPrice)
