@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SP_UITestScene.unity
     guid: c8ac627280db0ce41a0ea84c07a54df5
+  - enabled: 1
+    path: Assets/Scenes/MultiPlayerLevel1.unity
+    guid: 1671293a3ae2694448dea1461b4ed308
   m_configObjects: {}

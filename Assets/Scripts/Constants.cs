@@ -12,4 +12,5 @@ public class Constants : MonoBehaviour
     public static string basicShellId = "BASICSHELL_WEP";
     public static string largeShellId = "LARGESHELL_WEP";
     public static string railgunID = "RAILGUN_WEP";
+    public static string NUMPLAYERSPREF = "Pref_Multi_Num_Players";
 }

@@ -11,8 +11,7 @@ public class MultiplayerGameManager : MonoBehaviour
     public List<Tank> players;
     public List<GameObject> spawnPoints;
 
-    //PlayerPref string used to get value, should be set in main menu
-    string NUMPLAYERSPREF = "Pref_Multi_Num_Players";
+
     public MultiplayerUIManager uiMan;
 
     public int currentPlayer = 0;
@@ -38,7 +37,7 @@ public class MultiplayerGameManager : MonoBehaviour
     //Perform Game-start operations such as spawning players
     void Start()
     {
-     //   int numPlayers = PlayerPrefs.GetInt(NUMPLAYERSPREF);
+        numPlayers = PlayerPrefs.GetInt(Constants.NUMPLAYERSPREF, 4);
         players = new List<Tank>();
         for(int i = 0; i< numPlayers; i++)
         {
