@@ -12,7 +12,7 @@ public class MultiplayerGameManager : MonoBehaviour
     public List<GameObject> spawnPoints;
 
     //PlayerPref string used to get value, should be set in main menu
-    string NUMPLAYERSPREF = "Pref_Multi_Num_Players";
+    public string NUMPLAYERSPREF = "Pref_Multi_Num_Players";
     public MultiplayerUIManager uiMan;
 
     public int currentPlayer = 0;
