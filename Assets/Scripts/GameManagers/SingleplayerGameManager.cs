@@ -144,6 +144,18 @@ public class SingleplayerGameManager : MonoBehaviour
         WinPanel.SetActive(true);
 
         //update the visual for the number of stars
+        if(numStars == 0)
+        {
+            uiMan.setNoStars();
+        }
+        else if(numStars == 1)
+        {
+            uiMan.setOneStars();
+        }
+        else if(numStars == 2)
+        {
+            uiMan.setTwoStars();
+        }
 
 
         //get the current record for the level

@@ -10,6 +10,11 @@ public class SingleplayerUIManager : MonoBehaviour
     public AmmoButton largeShellButton;
     public AmmoButton railgunButton;
     public Slider forceSlider;
+
+
+    public Sprite emptyStar;
+
+    public Image[] stars;
     public void changeAmmoType(string typeId)
     {
         TankAmmo ammo = man.player.gameObject.GetComponent<TankAmmo>();
@@ -53,5 +58,24 @@ public class SingleplayerUIManager : MonoBehaviour
         railgunButton.updateQuantity(railgunNum);
         getAmmoButtonById(ammo.currentWeaponId).selectButton();
 
+    }
+
+    public void setNoStars()
+    {
+        foreach(Image star in stars)
+        {
+            star.sprite = emptyStar;
+        }
+    }
+
+    public void setOneStars()
+    {
+        stars[2].sprite = emptyStar;
+        stars[1].sprite = emptyStar;
+    }
+
+    public void setTwoStars()
+    {
+        stars[2].sprite = emptyStar;
     }
 }
