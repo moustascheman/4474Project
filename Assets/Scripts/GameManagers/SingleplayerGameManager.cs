@@ -20,7 +20,7 @@ public class SingleplayerGameManager : MonoBehaviour
     public List<Transform> TargetSpawns;
     public List<GameObject> targets;
 
-    
+
     public int NumTargets;
 
     public string levelID;
@@ -115,9 +115,13 @@ public class SingleplayerGameManager : MonoBehaviour
                 count++;
             }
         }
+
+        remainingTargets = count;
+
         if(count == 0)
         {
             //game Won
+            remainingTargetsText.text = "Targets Remaining: 0";
             WinGame();
         }
         else
@@ -167,7 +171,7 @@ public class SingleplayerGameManager : MonoBehaviour
             PlayerPrefs.SetInt(StarsKey, numStars);
         }
 
-        
+
     }
 
     public void retryLevel()

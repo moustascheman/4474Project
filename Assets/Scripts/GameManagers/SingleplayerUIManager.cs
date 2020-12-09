@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SingleplayerUIManager : MonoBehaviour
 {
@@ -10,11 +11,20 @@ public class SingleplayerUIManager : MonoBehaviour
     public AmmoButton largeShellButton;
     public AmmoButton railgunButton;
     public Slider forceSlider;
+    public TextMeshProUGUI powerPercentText;
 
+    private const float MAX_POWER = 20;
+    private const float MIN_POWER = 5;
 
     public Sprite emptyStar;
 
     public Image[] stars;
+
+    void Update()
+    {
+      powerPercentText.text = (int) Mathf.Ceil((forceSlider.value - MIN_POWER) * (100 / (MAX_POWER - MIN_POWER)))+ "%";
+    }
+
     public void changeAmmoType(string typeId)
     {
         TankAmmo ammo = man.player.gameObject.GetComponent<TankAmmo>();

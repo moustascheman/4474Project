@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 
 public class ArrowDrag : MonoBehaviour {
-    public float maxAngleConstraint = 110f;
-    public float minAngleConstraint = -110f;
+    public float maxAngleConstraint = 260f;
+    public float minAngleConstraint = 100f;
+    public float fAngle;
 
     void OnMouseDrag() {
         // Get angle
-        Vector3 tankWorldPosition = Camera.main.WorldToScreenPoint(transform.parent.position);
-        tankWorldPosition = Input.mousePosition - tankWorldPosition;
-        float fAngle = Mathf.Atan2(tankWorldPosition.y, tankWorldPosition.x) * Mathf.Rad2Deg - 90;
+        Vector3 tankWorldPosition = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.parent.position);
+        fAngle = Mathf.Atan2(-tankWorldPosition.x, tankWorldPosition.y) * Mathf.Rad2Deg;
 
         // Update rotation
-        transform.parent.rotation = Quaternion.Euler(0, 0, Mathf.Clamp(fAngle, minAngleConstraint, maxAngleConstraint));
+        transform.parent.eulerAngles = new Vector3(0f, 0f, Mathf.Clamp(fAngle, minAngleConstraint, maxAngleConstraint));
     }
 }
