@@ -656,7 +656,8 @@ MonoBehaviour:
 
     You
     can aim by dragging the aim arrow on your rank with the mouse and fire by clicking
-    the fire button.
+    the fire button. You can also increase the force of your shot by dragging the
+    power slider.
 
 
     In multiplayer mode, the last tank standing wins!
@@ -4708,7 +4709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1598899008
 RectTransform:
   m_ObjectHideFlags: 0
